@@ -17,14 +17,14 @@
 ## 分析來源 ##
 https://acs-garena.leagueoflegends.com/v1/players?name={Id}&region=TW  
 https://acs-garena.leagueoflegends.com/v1/stats/game/TW/{uid}  
-https://acs-garena.leagueoflegends.com/v1/stats/player_history/TW/{UID}?begIndex=0&endIndex=20&
-https://acs-garena.leagueoflegends.com/v1/stats/game/TW/{gameId}/timeline
+https://acs-garena.leagueoflegends.com/v1/stats/player_history/TW/{UID}?begIndex=0&endIndex=20&  
+https://acs-garena.leagueoflegends.com/v1/stats/game/TW/{gameId}/timeline  
 
 ## 遊戲資料來源 ##
-https://ddragon.leagueoflegends.com/cdn/{版本}/data/zh_TW/summoner.json
-https://ddragon.leagueoflegends.com/cdn/{版本}/data/zh_TW/item.json
-https://ddragon.leagueoflegends.com/cdn/{版本}/data/zh_TW/champion.json
-https://ddragon.leagueoflegends.com/cdn/{版本}/img/champion/{champname}.png
-https://ddragon.leagueoflegends.com/cdn/{版本}/img/item/{item}.png
-https://ddragon.leagueoflegends.com/cdn/{版本}/img/spell/{Summonerspellname}.png
-https://ddragon.leagueoflegends.com/cdn/{版本}/img/profileicon/{icon}.png
+https://ddragon.leagueoflegends.com/cdn/{版本}/data/zh_TW/summoner.json  
+https://ddragon.leagueoflegends.com/cdn/{版本}/data/zh_TW/item.json  
+https://ddragon.leagueoflegends.com/cdn/{版本}/data/zh_TW/champion.json  
+https://ddragon.leagueoflegends.com/cdn/{版本}/img/champion/{champname}.png  
+https://ddragon.leagueoflegends.com/cdn/{版本}/img/item/{item}.png  
+https://ddragon.leagueoflegends.com/cdn/{版本}/img/spell/{Summonerspellname}.png  
+https://ddragon.leagueoflegends.com/cdn/{版本}/img/profileicon/{icon}.png  
