@@ -3,4 +3,4 @@
 於是抱著學習的心態去製作它，變做邊學中發現很多事情可以寫。
 
 
-![]('https://raw.githubusercontent.com/kenson2998/LOL-TW-Rank-analysis/master/07-1.jpg')
+![](https://raw.githubusercontent.com/kenson2998/LOL-TW-Rank-analysis/master/07-1.jpg)
