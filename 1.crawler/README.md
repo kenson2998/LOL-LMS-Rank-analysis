@@ -62,6 +62,6 @@ crontab */20 * * * * pkill -9 python，每20分鐘就刪除python所有進程。
 <li>4.crontab 	排程設定如果時間相同時，一個是運行python 一個是pkill python時，會隔次時間才開啟。</li>
 
 
-
+## 爬蟲部分 ##
 ![](https://raw.githubusercontent.com/kenson2998/LOL-TW-Rank-analysis/master/1.crawler/img/07-1.jpg)
 ![](https://raw.githubusercontent.com/kenson2998/LOL-TW-Rank-analysis/master/1.crawler/img/07-2.jpg)
