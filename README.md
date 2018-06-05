@@ -15,8 +15,8 @@
 </ul>
 
 ## 分析來源 ##
-https://acs-garena.leagueoflegends.com/v1/players?name={Id}&region=TW
-https://acs-garena.leagueoflegends.com/v1/stats/game/TW/{uid}
+https://acs-garena.leagueoflegends.com/v1/players?name={Id}&region=TW  
+https://acs-garena.leagueoflegends.com/v1/stats/game/TW/{uid}  
 https://acs-garena.leagueoflegends.com/v1/stats/player_history/TW/{UID}?begIndex=0&endIndex=20&
 https://acs-garena.leagueoflegends.com/v1/stats/game/TW/{gameId}/timeline
 
