@@ -15,4 +15,4 @@
 </ul>
 
 
-![](https://raw.githubusercontent.com/kenson2998/LOL-TW-Rank-analysis/master/07-1.jpg)
+![](https://raw.githubusercontent.com/kenson2998/LOL-TW-Rank-analysis/master/img/07-1.jpg)
