@@ -1,19 +1,67 @@
 ## 前言 ##
-學習Django的時候，看到英雄聯盟有各國伺服器的數據戰績網，但是台灣的數據就是沒有人做出來，<br/>
-於是抱著學習的心態去製作它，邊做邊學中發現很多東西會運用和經驗就將它記錄下來。  
+首先把爬蟲(crawler)放在第一順位來講解，並不是代表研究的順序，而是整體來看  
+爬蟲的部分可以快速帶過，所以把mongodb資料庫寫入的部分就變得沒什麼特殊，但爬蟲調適的耗時也不輸其他項目的。
 
 ## 開發工具 ##
 <ul>
 	<li>語言:Python3.6</li>
-	<li>網頁:Django、javascript、jQuery、HTML、css</li>
 	<li>資料庫:mongodb</li>
-	<li>網路空間:heroku、mlab、AWS、GCP</li>
-	<li>前端工具:highchart、echart、bootstrap、nicescroll、semantic、lazyload</li>
-	<li>額外插件:timeago、telegram-bot</li>
-	<li>爬蟲:Beautifulsoup4、Process多進程運用、crontab排程運用、threading多線程</li>
-	
+	<li>資料庫空間:mlab、AWS</li>
+	<li>額外插件:datetime、pymongo、requests、json</li>
+	<li>爬蟲:Beautifulsoup4(一開始會使用，後來發現api獲得的json不必用到)</li>
+	<li>Linux指令:nohup、crontab、kill</li>
 </ul>
 
+## 編寫多進程 ##
+
+這邊運用Process來執行多"進"程    
+所以有一個主程式py檔來設定到排程上，
+用for 迴圈可以執行多個Process,這邊下了11個進程來呼叫py檔
+start.py
+```python
+#!/usr/local/bin/python
+# -*- coding: utf-8 -*-
+
+from multiprocessing import Process
+import os
+import time
+def StartSh(path):
+    os.system(path)
+
+if __name__ == '__main__':
+        
+        sh='python crawler01.py '
+        li = [sh]
+
+        for i in range(1,11):
+
+            p = Process(target=StartSh, args=(li[0]+str(i),))
+
+            p.start()
+```
+
+之前是將腳本丟到AWS上去設定排程跑，不過免費的主機效能很低且多開發現流量會爆表，  
+大概摸索了3個月就不在AWS上執行了，因為初衷是以免費為前提練習的，為此花了700多NT。  
+
+## 設定排程 ##
+
+我使用了crontab 來進行排程執行我要的腳本，這邊遇到了很多問題:  
+<li>1.運行python start.py 後，關掉終端程序就停了!</li>
+解決辦法使用 nohup運行python，就可以在後端運行python。  
+<li>2.nohup 運行時，不支援utf-8。</li>
+可以寫一個py檔來print(sys.stdout.encoding) ,  
+可以在下圖看到用nohup python 執行會出現 None , 一般環境下執行會顯示utf-8 ,  
+所以我們要Linux下指令，告訴Linux 環境 nohup 的python 預設需要使用utf-8,  
+"export PYTHONIOENCODING=utf-8" ,按下Enter送出後，再次使用nohup 腳本就可以看到顯示utf-8。  
+
+![](https://raw.githubusercontent.com/kenson2998/LOL-TW-Rank-analysis/master/1.crawler/img/nohup.jpg)
+<li>3.運行nohup python start.py 後，有些進程不會自己離開，會佔用掉記憶體,最後AWS整個當掉。</li>
+因為是免費的AWS所以memory 大小有限，所以crontab 也設定了一個排程用來移除殘存的進程。  
+crontab */20 * * * * pkill -9 python，每20分鐘就刪除python所有進程。  
+
+<li>4.crontab 	排程設定如果時間相同時，一個是運行python 一個是pkill python時，會隔次時間才開啟。</li>
 
 
-![](https://raw.githubusercontent.com/kenson2998/LOL-TW-Rank-analysis/master/img/07-1.jpg)
+
+![](https://raw.githubusercontent.com/kenson2998/LOL-TW-Rank-analysis/master/1.crawler/img/07-1.jpg)
+![](https://raw.githubusercontent.com/kenson2998/LOL-TW-Rank-analysis/master/1.crawler/img/07-2.jpg)
