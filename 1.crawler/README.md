@@ -72,5 +72,13 @@ edate 是當前爬到的遊戲時間
 end 是這個進程最後結尾的遊戲編號，也就是迴圈最後會到這個遊戲編號後停止。
 ![](https://raw.githubusercontent.com/kenson2998/LOL-TW-Rank-analysis/master/1.crawler/img/07-1.jpg)
 2. 圖2是爬蟲之前會先去讀取資料庫裡面(1~11)個進程記錄，把here和end的遊戲編號都抓出來，  
-之後透過max(list)的方式查看最新的end最後遊戲編號是多少，就可以接續爬蟲。  
+之後透過max(list)的方式查看最新的end最後遊戲編號是多少，這裡查看到是1515871876，下方會藉由這個數字接著繼續爬蟲。  
 ![](https://raw.githubusercontent.com/kenson2998/LOL-TW-Rank-analysis/master/1.crawler/img/07-2.jpg)
+3.圖3 可以看到 將1515871876帶入下方function，這邊設定範圍爬取範圍10，也就是1515871876~1515871886，  
+![](https://raw.githubusercontent.com/kenson2998/LOL-TW-Rank-analysis/master/1.crawler/img/cr-1.jpg)  
+然後到:  
+https://acs-garena.leagueoflegends.com/v1/stats/game/TW/1515871876/timeline  
+![](https://raw.githubusercontent.com/kenson2998/LOL-TW-Rank-analysis/master/1.crawler/img/cr-2.jpg)  
+https://acs-garena.leagueoflegends.com/v1/stats/game/TW/1515871876  
+![](https://raw.githubusercontent.com/kenson2998/LOL-TW-Rank-analysis/master/1.crawler/img/cr-3.jpg)  
+可以看到api返回了兩個json，這邊看起來很恐怖對吧~  
