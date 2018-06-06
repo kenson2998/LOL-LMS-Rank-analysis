@@ -63,5 +63,14 @@ crontab */20 * * * * pkill -9 python，每20分鐘就刪除python所有進程。
 
 
 ## 爬蟲部分 ##
+1.圖1是資料庫的部分  
+1aws 代表 第一個進程，2aws 代表第二個進程，以此類推。  
+字典(dict)裡面的  
+start 是每次進程for迴圈裡面的第一個要爬的遊戲編號，  
+here 是 當前運行時爬到哪個遊戲編號了，如果中間碰到程序問題還可以記錄還有多少沒爬完。  
+edate 是當前爬到的遊戲時間  
+end 是這個進程最後結尾的遊戲編號，也就是迴圈最後會到這個遊戲編號後停止。
 ![](https://raw.githubusercontent.com/kenson2998/LOL-TW-Rank-analysis/master/1.crawler/img/07-1.jpg)
+2. 圖2是爬蟲之前會先去讀取資料庫裡面(1~11)個進程記錄，把here和end的遊戲編號都抓出來，  
+之後透過max(list)的方式查看最新的end最後遊戲編號是多少，就可以接續爬蟲。  
 ![](https://raw.githubusercontent.com/kenson2998/LOL-TW-Rank-analysis/master/1.crawler/img/07-2.jpg)
