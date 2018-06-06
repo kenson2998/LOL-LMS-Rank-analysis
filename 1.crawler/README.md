@@ -85,10 +85,12 @@ https://acs-garena.leagueoflegends.com/v1/stats/game/TW/1515871876
 其實對照一下戰績後就可以得知一些資訊，例如＂queueId＂430　是代表　'一般對戰'　， 
 
 ## 遇到時間格式轉換 
-gameDuration:1736 是該場遊戲時間長度，用timeago格式化可以得到時間。(timeago需要另外安裝插件)  
+gameDuration:1736 是該場遊戲時間長度，格式轉化後可以獲得時分秒。  
 ![](https://raw.githubusercontent.com/kenson2998/LOL-TW-Rank-analysis/master/1.crawler/img/cr-4.jpg)  
 gameCreation:1527272140991,這是一個時間戳(timestamp)格式,不過時間戳格式其實是10位數，所以只要取前10位數就行了，  
+
 ```python
 datetime.datetime.fromtimestamp(int('1527272140')).strftime("%Y-%m-%d %H:%M:%S")
 ```
+直接用timeago格式化可以得到時間。(timeago需要另外安裝插件)  
 ![](https://raw.githubusercontent.com/kenson2998/LOL-TW-Rank-analysis/master/1.crawler/img/cr-5.jpg)  
