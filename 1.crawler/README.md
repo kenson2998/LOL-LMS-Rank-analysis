@@ -79,9 +79,9 @@ end 是這個進程最後結尾的遊戲編號，也就是迴圈最後會到這�
 然後到:  
 https://acs-garena.leagueoflegends.com/v1/stats/game/TW/1515871876/timeline  
 記錄著遊戲的每分鐘發生的事情，如購買販賣道具、技能升級、技能進化、擊殺英雄在"type"來分類。
-![](https://raw.githubusercontent.com/kenson2998/LOL-TW-Rank-analysis/master/1.crawler/img/cr-2.jpg)  
-https://acs-garena.leagueoflegends.com/v1/stats/game/TW/1515871876  
 ![](https://raw.githubusercontent.com/kenson2998/LOL-TW-Rank-analysis/master/1.crawler/img/cr-3.jpg)  
+https://acs-garena.leagueoflegends.com/v1/stats/game/TW/1515871876  
+![](https://raw.githubusercontent.com/kenson2998/LOL-TW-Rank-analysis/master/1.crawler/img/cr-2.jpg)  
 可以看到api返回了兩個json，這邊看起來很恐怖對吧~  
 其實對照一下戰績後就可以得知一些資訊，例如＂queueId＂430　是代表　'一般對戰'　， 
 
