@@ -78,6 +78,7 @@ end 是這個進程最後結尾的遊戲編號，也就是迴圈最後會到這�
 ![](https://raw.githubusercontent.com/kenson2998/LOL-TW-Rank-analysis/master/1.crawler/img/cr-1.jpg)  
 然後到:  
 https://acs-garena.leagueoflegends.com/v1/stats/game/TW/1515871876/timeline  
+記錄著遊戲的每分鐘發生的事情，如購買販賣道具、技能升級、技能進化、擊殺英雄在"type"來分類。
 ![](https://raw.githubusercontent.com/kenson2998/LOL-TW-Rank-analysis/master/1.crawler/img/cr-2.jpg)  
 https://acs-garena.leagueoflegends.com/v1/stats/game/TW/1515871876  
 ![](https://raw.githubusercontent.com/kenson2998/LOL-TW-Rank-analysis/master/1.crawler/img/cr-3.jpg)  
@@ -94,3 +95,32 @@ datetime.datetime.fromtimestamp(int('1527272140')).strftime("%Y-%m-%d %H:%M:%S")
 ```
 直接用timeago格式化可以得到時間。(timeago需要另外安裝插件)  
 ![](https://raw.githubusercontent.com/kenson2998/LOL-TW-Rank-analysis/master/1.crawler/img/cr-5.jpg)  
+
+## Mongodb 寫入 
+接下來是資料寫入Mongo的部分  
+因為爬蟲有使用到一些mongo用法,所以來稍微記錄一下。  
+
+在寫入資料之前會先查詢該英雄是否在資料庫內，如果找不到值會以None值回傳  
+```python
+version = '8.7'
+champ_db_data = db[version].find_one({'_id': champid})
+
+if champ_db_data == None:  # 如果名稱為8.7資料庫沒有該英雄資料，新增該英雄object到資料庫
+    champ_db = db[version]
+```
+如果上面未找到相對應的'_id'這樣下面的update更新語法就會失敗，所以我們要用到insert新增資料表  
+如果沒有db[version]這個資料庫，用insert也會一起順便建立db_  
+update有set指令和inc指令，一個是複寫內容、一個是數值內容幫你加1，
+
+
+
+```python
+champ_db.insert({'_id': champid, 'version': version}) #寫入一筆資料，即使沒有db 也會順帶創出來
+
+champ_db.update({'_id': champid}, {"$set": {'game_static': di}}) #update 如果用了"$set" 是整個複寫"game_static"內的內容
+
+champ_db.update({'_id': champid}, {"$inc": {lll: l}}) #update 用 "$inc" 是用來將裡面的數值+1
+```
+![](https://raw.githubusercontent.com/kenson2998/LOL-TW-Rank-analysis/master/1.crawler/img/set.png)  
+
+![](https://raw.githubusercontent.com/kenson2998/LOL-TW-Rank-analysis/master/1.crawler/img/inc.png)  
