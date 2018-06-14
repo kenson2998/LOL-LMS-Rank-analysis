@@ -122,7 +122,10 @@ champ_db.update({'_id': champid}, {"$set": {'game_static': di}}) #update 如果�
 champ_db.update({'_id': champid}, {"$inc": {lll: l}}) #update 用 "$inc" 是用來將裡面的數值+1
 ```
 
-### 以下為set例子:
+### 以下為set例子:  
+
 ![](https://raw.githubusercontent.com/kenson2998/LOL-TW-Rank-analysis/master/1.crawler/img/set.png)  
-### 以下為inc例子:
+
+### 以下為inc例子:  
+
 ![](https://raw.githubusercontent.com/kenson2998/LOL-TW-Rank-analysis/master/1.crawler/img/inc.png)  
