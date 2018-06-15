@@ -76,11 +76,15 @@ end 是這個進程最後結尾的遊戲編號，也就是迴圈最後會到這�
 ![](https://raw.githubusercontent.com/kenson2998/LOL-TW-Rank-analysis/master/1.crawler/img/07-2.jpg)
 3.圖3 可以看到 將1515871876帶入下方function，這邊設定範圍爬取範圍10，也就是1515871876～1515871886，  
 ![](https://raw.githubusercontent.com/kenson2998/LOL-TW-Rank-analysis/master/1.crawler/img/cr-1.jpg)  
-然後到:  
-https://acs-garena.leagueoflegends.com/v1/stats/game/TW/1515871876/timeline  
+
+## Json解析 
+然後到官方的api上查詢遊戲資料，格式是Json，建議使用firefox瀏覽器開啟:  
+https://acs-garena.leagueoflegends.com/v1/stats/game/TW/1515871876/timeline    
 記錄著遊戲的每分鐘發生的事情，如購買販賣道具(ITEM_PURCHASED)、技能升級(SKILL_LEVEL_UP)、技能進化(EVOLVE)、擊殺英雄(CHAMPION_KILL)在"type"來分類。
 ![](https://raw.githubusercontent.com/kenson2998/LOL-TW-Rank-analysis/master/1.crawler/img/cr-3.jpg)  
 https://acs-garena.leagueoflegends.com/v1/stats/game/TW/1515871876  
+結尾沒有timeline的是該場整體數據，後面戰績顯示和爬蟲都是依賴這個api網址。  
+
 ![](https://raw.githubusercontent.com/kenson2998/LOL-TW-Rank-analysis/master/1.crawler/img/cr-2.jpg)  
 可以看到api返回了兩個json，這邊看起來很恐怖對吧~  
 其實對照一下戰績後就可以得知一些資訊，例如＂queueId＂:430　是代表　'一般對戰'、"teams.0.teamId" :100 代表藍方陣營，200 代表紅方陣營。
