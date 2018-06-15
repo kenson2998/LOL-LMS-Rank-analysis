@@ -123,9 +123,11 @@ champ_db.update({'_id': champid}, {"$inc": {lll: l}}) #update 用 "$inc" 是用�
 ```
 
 ### 以下為set例子:  
+覆寫內容。這邊是將爬到的遊戲時間記錄到資料庫，所以更新"1aws"裡面的edate內容。  
 
 ![](https://raw.githubusercontent.com/kenson2998/LOL-TW-Rank-analysis/master/1.crawler/img/set.png)  
 
 ### 以下為inc例子:  
+inc可以用在累加勝敗場次或是運算用，這邊是遊戲中使用id為154的英雄，如果該場勝利就在勝利欄位+1。
 
 ![](https://raw.githubusercontent.com/kenson2998/LOL-TW-Rank-analysis/master/1.crawler/img/inc.png)  

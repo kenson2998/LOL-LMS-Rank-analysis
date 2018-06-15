@@ -8,7 +8,7 @@
 <ul>
 	<li>語言:Python3.6</li>
 	<li>網頁:Django、javascript、jQuery、HTML、css</li>
-	<li>資料庫:mongodb</li>
+	<li>資料庫:<a url="https://github.com/kenson2998/LOL-TW-Rank-analysis/tree/master/1.crawler#%E4%BB%A5%E4%B8%8B%E7%82%BAset%E4%BE%8B%E5%AD%90">mongodb</a></li>
 	<li>網路空間:heroku、mlab、AWS、GCP</li>
 	<li>前端工具:highchart、echart、bootstrap、nicescroll、semantic、lazyload</li>
 	<li>額外插件:timeago、telegram-bot</li>
