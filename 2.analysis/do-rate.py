@@ -3,7 +3,7 @@ import pymongo
 import sys
 def fu(a,b,c):
 
-    urib = "mongodb://leon:leon@ds219098.mlab.com:19098/gamedata01-1"
+    urib = "mongodb://user:user@ds000000.mlab.com:000000/gamedata01-1"
     clientb = pymongo.MongoClient(urib)
     db = clientb['gamedata01-1']
     collect2 = db[c]
@@ -61,7 +61,7 @@ def fu(a,b,c):
 fcz=sys.argv[1]
 star=int(sys.argv[2])
 en=int(sys.argv[3])
-urib = "mongodb://leon:leon@ds219098.mlab.com:19098/gamedata01-1"
+urib = "mongodb://user:user@ds000000.mlab.com:000000/gamedata01-1"
 clientb = pymongo.MongoClient(urib)
 dbb = clientb['gamedata01-1']
 collect2b = dbb[fcz]

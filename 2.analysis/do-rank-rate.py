@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 import pymongo
 import sys
-fcz='8.7'
-urib = "mongodb://leon:leon@ds219098.mlab.com:19098/gamedata01-1"
+fcz='8.12'
+urib = "mongodb://user:user@ds000000.mlab.com:000000/gamedata01-1"
 clientb = pymongo.MongoClient(urib)
 dbb = clientb['gamedata01-1']
 collect_data = dbb[fcz]
-collect_ps = dbb['champion_s8.7']
+collect_ps = dbb['champion_s8.12']
 data_ps=collect_ps.find_one({'_id':'ps'})
 
 pst=['top','sup','jg','mid','ad']
