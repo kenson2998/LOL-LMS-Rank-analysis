@@ -167,3 +167,5 @@ z是還沒排序前:
 ![](https://raw.githubusercontent.com/kenson2998/LOL-TW-Rank-analysis/master/2.analysis/img/z.png)  
 da是用sorted函式排序:  
 ![](https://raw.githubusercontent.com/kenson2998/LOL-TW-Rank-analysis/master/2.analysis/img/da.png)  
+
+![](https://raw.githubusercontent.com/kenson2998/LOL-TW-Rank-analysis/master/2.analysis/img/da2.png)  
