@@ -39,7 +39,9 @@ for xi in data_ps:
     if xi['_id']!='bans':
         coto=(xi['usetime']['win'])+(xi['usetime']['lose'])
         z[xi['_id']]=('{percent:.2%}'.format(percent=round(float(xi['usetime']['win'])/coto, 4))),coto
+print('z:',z)
 da = sorted(z.items(), key=lambda d: d[1][0], reverse=True)
+print('da:',da)
 collect_ps.update({'_id': 'winrate'}, {"$set": {'total': da}})
 print('done')
 
