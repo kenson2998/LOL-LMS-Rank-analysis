@@ -29,7 +29,7 @@ git remote -v
 ```
 ## 6.將django資料放進來
 
-<h style="color: blue">[]框起來的檔案是後面會另外建立的</h>
+<p style="color: blue;">[]框起來的檔案是後面會另外建立的</p>
 
 loltwggdjango  
     ├── appkenson  
@@ -38,14 +38,14 @@ loltwggdjango
     │　　　　├── settings.py  
     │　　　　├── urls.py  
     │　　　　├── wsgi.py  
-    │　　　　└── [production_settings.py]  
+    │　　　　└── [<p style="color: blue;">production_settings.py</p>]  
     ├── templates  
     ├── trips  
     ├── manage.py  
-    ├── [.gitignore]  
-    ├── [procfile]  
-    ├── [requirements.txt]  
-    └── [runtime.txt]  
+    ├── [<p style="color: blue;">.gitignore</p>]  
+    ├── [<p style="color: blue;">procfile</p>]  
+    ├── [<p style="color: blue;">requirements.txt</p>]  
+    └── [<p style="color: blue;">runtime.txt</p>]  
 
 ## 7.設定環境變數
 ```linux
