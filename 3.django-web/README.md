@@ -33,12 +33,12 @@ git remote -v
 
 loltwggdjango  
     ├── appkenson  
-    │　　　　　　│   
-    │　　　　　　├── __init__.py  
-    │　　　　　　├── settings.py  
-    │　　　　　　├── urls.py  
-    │　　　　　　├── wsgi.py  
-    │　　　　　　└── [production_settings.py]  
+    │　　　　│   
+    │　　　　├── __init__.py  
+    │　　　　├── settings.py  
+    │　　　　├── urls.py  
+    │　　　　├── wsgi.py  
+    │　　　　└── [production_settings.py]  
     ├── templates  
     ├── trips  
     ├── manage.py  
@@ -104,25 +104,25 @@ ALLOWED_HOSTS = ['*']
 ```
 
 
-10.目錄底下建立 Git Repository,add後面要空白再一個"點"，之後更新文件時，也需要執行這三行。
+## 10.目錄底下建立 Git Repository,add後面要空白再一個"點"，之後更新文件時，也需要執行這三行。
 git init
 git add .
 git commit -m "testupdate"
 
-11.設定金鑰
+## 11.設定金鑰
 heroku keys:add
 
-12.上傳資料
+## 12.上傳資料
 git push heroku master
 
-13.網站初始化
+## 13.網站初始化
 heroku ps:scale web=1
 
-14.static_ROOT error的問題，就執行:
+## 14.static_ROOT error的問題，就執行:
 heroku config:set DISABLE_COLLECTSTATIC=1
 
-15.都正常以後，執行指令格式化資料庫
+## 15.都正常以後，執行指令格式化資料庫
 heroku run python manage.py migrate
 
-16.開啟django專案
+## 16.開啟django專案
 heroku run python manage.py runserver
