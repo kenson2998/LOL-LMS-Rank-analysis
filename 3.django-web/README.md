@@ -3,23 +3,23 @@
 
 ## heroku+Django創建 ##
 
-##1.安裝 Heroku 工具
+## 1.安裝 Heroku 工具
 https://toolbelt.heroku.com/download/windows
 
-##2.終端測試登入，登入時會幫你安裝 heroku-CLI  
+## 2.終端測試登入，登入時會幫你安裝 heroku-CLI  
 ```command
 heroku login  -> email和password
 ```
-##3.安裝需要用到的插件  
+## 3.安裝需要用到的插件  
 ```command
 pip install dj-database-url gunicorn dj-static
 ```
-##4.創立一個loltwggdjango並先到目錄底下
+## 4.創立一個loltwggdjango並先到目錄底下
 ```command
 heroku create loltwggdjango
 cd C:\..\loltwggdjango\
 ```
-##5.指定heroku 指向loltwggdjango的專案上
+## 5.指定heroku 指向loltwggdjango的專案上
 ```command
 heroku git:remote -a loltwggdjango
 ```
@@ -27,18 +27,18 @@ heroku git:remote -a loltwggdjango
 ```command
 git remote -v
 ```
-##6.將django資料放進來
+## 6.將django資料放進來
 
 []框起來的檔案是後面會另外建立的
 
 loltwggdjango  
     ├── appkenson  
-    │       │   
-    │       ├── __init__.py  
-    │       ├── settings.py  
-    │       ├── urls.py  
-    │       ├── wsgi.py  
-    │       └── [production_settings.py]  
+    │　　　　　　│   
+    │　　　　　　├── __init__.py  
+    │　　　　　　├── settings.py  
+    │　　　　　　├── urls.py  
+    │　　　　　　├── wsgi.py  
+    │　　　　　　└── [production_settings.py]  
     ├── templates  
     ├── trips  
     ├── manage.py  
@@ -47,15 +47,15 @@ loltwggdjango
     ├── [requirements.txt]  
     └── [runtime.txt]  
 
-##7.設定環境變數
+## 7.設定環境變數
 ```linux
 heroku config:set DJANGO_SETTINGS_MODULE=kensontest2.production_settings
 ```
-##8.將環境會使用到的pip插件存到[requirements.txt]
+## 8.將環境會使用到的pip插件存到[requirements.txt]
 ```linux
 pip freeze > requirements.txt
 ```
-##9.在開啟的目錄下創檔案
+## 9.在開啟的目錄下創檔案
 (1)[procfile]不要有副檔名並編輯內容為:  
 ```python
 web: gunicorn kensontest2.wsgi
