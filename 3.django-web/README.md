@@ -29,7 +29,7 @@ git remote -v
 ```
 ## 6.將django資料放進來
 
-<b style="color: blue">[]框起來的檔案是後面會另外建立的</b>
+<h style="color: blue">[]框起來的檔案是後面會另外建立的</h>
 
 loltwggdjango  
     ├── appkenson  
