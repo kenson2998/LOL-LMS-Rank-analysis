@@ -29,7 +29,7 @@ git remote -v
 ```
 ## 6.將django資料放進來
 
-[]框起來的檔案是後面會另外建立的
+<b style="color: blue">[]框起來的檔案是後面會另外建立的</b>
 
 loltwggdjango  
     ├── appkenson  
@@ -105,24 +105,32 @@ ALLOWED_HOSTS = ['*']
 
 
 ## 10.目錄底下建立 Git Repository,add後面要空白再一個"點"，之後更新文件時，也需要執行這三行。
+```python
 git init
 git add .
 git commit -m "testupdate"
-
+```
 ## 11.設定金鑰
+```python
 heroku keys:add
-
+```
 ## 12.上傳資料
+```python
 git push heroku master
-
+```
 ## 13.網站初始化
+```python
 heroku ps:scale web=1
-
+```
 ## 14.static_ROOT error的問題，就執行:
+```python
 heroku config:set DISABLE_COLLECTSTATIC=1
-
+```
 ## 15.都正常以後，執行指令格式化資料庫
+```python
 heroku run python manage.py migrate
-
+```
 ## 16.開啟django專案
+```python
 heroku run python manage.py runserver
+```
