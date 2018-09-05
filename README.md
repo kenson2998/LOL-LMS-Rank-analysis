@@ -1,4 +1,8 @@
-![]()
+### 9/6 更新 英雄技能和造型
+因為找到一個沒玩過的api,所以來運用最近學到的加載資料功能，再加上幻燈片來呈現這次的東西。  
+[看實例網址在這](http://loltwgg.herokuapp.com/champ/Talon/)  
+[源碼記錄在這](https://github.com/kenson2998/member_test#%E8%8B%B1%E9%9B%84%E8%B3%87%E6%96%99demo)  
+![](https://raw.githubusercontent.com/kenson2998/LOL-TW-Rank-analysis/master/img/phone1.jpg)
 
 ## 前言 ##
 學習Django的時候，看到英雄聯盟有各國伺服器的數據戰績網，但是台灣的數據就是沒有人做出來,  
